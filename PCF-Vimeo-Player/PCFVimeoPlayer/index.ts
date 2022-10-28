@@ -56,10 +56,14 @@ export class PCFVimeoPlayer implements ComponentFramework.StandardControl<IInput
 		const vheight = context.parameters.vheight.raw;
 		if(this._Source != iframeSrc) {
 			this._Source = iframeSrc ? iframeSrc : "";
-			this._vwidth = vwidth ? vwidth : "360px";
-			this._vheight = vheight ? vheight : "480px";
 			this._iframe.setAttribute("src", this._Source);
+		}
+		if(this._vwidth != vwidth) {
+			this._vwidth = vwidth ? vwidth : "360px";
 			this._iframe.setAttribute("width", this._vwidth);
+		}
+		if(this._vheight != vheight) {
+			this._vheight = vheight ? vheight : "480px";
 			this._iframe.setAttribute("height", this._vheight);
 		}
     }
@@ -71,7 +75,7 @@ export class PCFVimeoPlayer implements ComponentFramework.StandardControl<IInput
 		const iFrameElement: HTMLIFrameElement = document.createElement("iframe");
 		iFrameElement.setAttribute("class", "iFrameControl");
 		iFrameElement.setAttribute("frameborder", "0");
-
+		iFrameElement.setAttribute("allow", "autoplay; fullscreen; picture-in-picture");
 		this._iframe = iFrameElement;
 
 		this._container.appendChild(this._iframe);
