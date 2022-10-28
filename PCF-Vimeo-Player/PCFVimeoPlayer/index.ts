@@ -7,7 +7,8 @@ export class PCFVimeoPlayer implements ComponentFramework.StandardControl<IInput
 
 	// SRC for iframe
 	private _Source: string;
-
+	private _vwidth: string;
+	private _vheight: string;
 	// Reference to the control container HTMLDivElement
 	private _container: HTMLDivElement;
 
@@ -51,10 +52,15 @@ export class PCFVimeoPlayer implements ComponentFramework.StandardControl<IInput
 		}
 
 		const iframeSrc = context.parameters.source.raw;
-
+		const vwidth = context.parameters.vwidth.raw;
+		const vheight = context.parameters.vheight.raw;
 		if(this._Source != iframeSrc) {
 			this._Source = iframeSrc ? iframeSrc : "";
+			this._vwidth = vwidth ? vwidth : "360px";
+			this._vheight = vheight ? vheight : "480px";
 			this._iframe.setAttribute("src", this._Source);
+			this._iframe.setAttribute("width", this._vwidth);
+			this._iframe.setAttribute("height", this._vheight);
 		}
     }
 

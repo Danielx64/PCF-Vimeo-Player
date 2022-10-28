@@ -19,6 +19,10 @@
     </external-service-usage>
     <!-- property node identifies a specific, configurable piece of data that the control expects from CDS -->
     <property name="source" display-name-key="Source" description-key="Source" of-type="SingleLine.URL" usage="bound" required="true" default-value="https://www.bing.com/"/>
+   <property name="vwidth" display-name-key="vwidth" description-key="vwidth" of-type="SingleLine.Text" usage="bound" required="true" default-value="480px"/>
+   <property name="vheight" display-name-key="vheight" description-key="vheight" of-type="SingleLine.Text" usage="bound" required="true" default-value="680px"/>
+   
+   
     <!--
       Property node's of-type attribute can be of-type-group attribute.
       Example:
