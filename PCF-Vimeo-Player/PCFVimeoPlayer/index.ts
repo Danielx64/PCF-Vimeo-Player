@@ -1,6 +1,6 @@
 import {IInputs, IOutputs} from "./generated/ManifestTypes";
 
-export class responsiveIframePCFControl implements ComponentFramework.StandardControl<IInputs, IOutputs> {
+export class PCFVimeoPlayer implements ComponentFramework.StandardControl<IInputs, IOutputs> {
 
     // Reference to IFrame HTMLElement
 	private _iframe: HTMLIFrameElement;
